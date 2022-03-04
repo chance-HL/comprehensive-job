@@ -22,7 +22,7 @@
               首页
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.com/chance-HL/Comprehensive-work/tree/main/vue-admin-template-master">
+          <a target="_blank" href="https://github.com/chance-HL/comprehensive-job">
             <el-dropdown-item>项目地址</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
