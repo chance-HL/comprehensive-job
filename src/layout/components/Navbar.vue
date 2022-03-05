@@ -10,12 +10,21 @@
     <!-- <breadcrumb id="breadcrumb-container" class="breadcrumb-container" /> -->
 
     <div class="right-menu">
+      <el-button
+        plain
+        round
+        class="newsBtn"
+        @click="open5"
+      >
+        消息
+      </el-button>
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
           <img src="@/assets/common/xixihaha.jpg" class="user-avatar">
           <span class="name">{{ name }}</span>
           <i class="el-icon-caret-bottom" />
         </div>
+
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
           <router-link to="/">
             <el-dropdown-item>
@@ -59,6 +68,14 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+    },
+    open5() {
+      this.$notify.info({
+        title: '消息',
+        message: '你好(*´▽｀)ノノ',
+        offset: 100,
+        duration: 3000
+      })
     }
   }
 }
@@ -118,7 +135,12 @@ export default {
     &:focus {
       outline: none;
     }
-
+    .newsBtn{
+      transform: translateY(-4px);
+      margin-right: 20px;
+      border: 2px solid #0000ff;
+      font-weight: 700;
+    }
    .name {
           color: #fff;
           vertical-align: middle;
